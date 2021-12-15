@@ -1,0 +1,22 @@
+{% extends 'base.html'}
+{% block header %}
+<title>Height Converter</title>
+{% endblock %}
+
+{% block body %}
+<h1>Height Converter</h1>
+
+<form action="/height" method="POST">
+    <label for="height">Height:</label><br>
+    <input type="number" step="any" id="height" name="height"><br>
+    <select name="unit" id="unit">
+        <option value = "feet">Feet</option>
+        <option value = "meters">Meters</option>
+    </select>
+    <input type="submit" value="Get Height!"><br>
+    <br>
+</form>
+{{height}}
+{{unit}}
+{{error}}
+{% endblock %}
