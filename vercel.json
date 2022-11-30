@@ -1,4 +1,11 @@
 {
+    "version": 2,
+    "builds": [
+        {
+            "src": "./height_converter/app.py",
+            "use": "@vercel/python"
+        }
+    ],
     "rewrites": [
         { "source": "/(.*)", "destination": "/height_converter" }
     ]
