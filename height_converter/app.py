@@ -15,11 +15,15 @@ def convert_height(height, unit):
 @app.route('/', methods=['POST', 'GET'])
 def height():
     if request.method == 'POST':
+        if (len(request.form) != 2):
+            error = "Invalid input - Please choose a unit type."
+            return render_template('height_converter.html', error=error)
+
         height = request.form['height']
         unit = request.form['unit']
 
         if (height == ''):
-            error = "Invalid input - Please enter an input."
+            error = "Invalid input - Please enter an input for height."
             return render_template('height_converter.html', error=error)
 
         height, unit = convert_height(height, unit)
